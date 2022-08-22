@@ -1,1 +1,186 @@
 @import "normalize.css";
+@import "fonts";
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+body {
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #102746;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin fontLato($fs, $fw, $lh, $cl) {
+  font-family: "Lato";
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+  color: $cl;
+}
+//@include fontLato(px, 400, px, #fff);
+
+.container {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+// Header start
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 56px;
+    .header__logo-link {
+      display: flex;
+    }
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+
+  .nav__item:last-child .nav__link {
+    margin-right: 0;
+  }
+  .nav__link {
+    @include fontLato(18px, 400, 24px, #fff);
+    text-decoration: none;
+    margin-right: 82px;
+    transition: 0.2s;
+  }
+  .nav__link:hover {
+    transition: 0.2s;
+    opacity: 0.75;
+  }
+}
+
+//Header end
+
+//Main start
+.main {
+  .intro {
+    min-height: 962px;
+    background: url("../assets/img/intro-bg.jpg") center no-repeat;
+    background-size: cover;
+    padding-top: 263px;
+    .intro-title {
+      @include fontLato(50px, 500, 60px, #fff);
+      max-width: 619px;
+      margin-bottom: 22px;
+    }
+    .intro-subtitle {
+      @include fontLato(16px, 400, 24px, #fff);
+      max-width: 546px;
+      margin-bottom: 59px;
+    }
+    .intro-form__info {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .intro-form__field {
+      width: 297px;
+      background: transparent url(../assets/svg/Oval.svg) no-repeat left 8px;
+      background-size: 20px 20px;
+      border: 0;
+      border-bottom: 2px solid #bfc0c5;
+      color: #fff;
+      outline: none;
+      padding-left: 43px;
+      padding-bottom: 22px;
+      margin-right: 61px;
+      @include fontLato(18px, 500, 24px, #fff);
+      &::placeholder {
+        color: #fff;
+      }
+    }
+    .intro-form__submit {
+      padding: 15px 39px;
+      border: 0;
+      text-transform: uppercase;
+      @include fontLato(24px, 500, 28.8px, #fff);
+      background: #1b7dff;
+      transition: 0.2s;
+      &:hover {
+        background: #0b4ea5;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .benefits__container {
+    max-width: 1262px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+    position: relative;
+
+    .benefits__title {
+      width: 100%;
+      @include fontLato(35px, 500, 42px, #102746);
+      padding: 93px 100px 88px 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      background-color: #fff;
+    }
+
+    .benefits__cards {
+      display: flex;
+      padding: 32px 100px 112px;
+      gap: 55px;
+      .benefits__card-img {
+        margin-bottom: 37px;
+      }
+      .benefits__card-title {
+        @include fontLato(18px, 500, 24px, #102746);
+        margin-bottom: 26px;
+      }
+      .benefits__card-subtitle {
+        @include fontLato(16px, 400, 24px, #102746);
+        margin-bottom: 39px;
+      }
+      .benefits__card-more {
+        @include fontLato(16px, 400, 24px, #006dfe);
+        text-decoration: none;
+        text-transform: uppercase;
+        padding-right: 59px;
+        background: url(../assets/svg/arrow.svg) no-repeat 95% center;
+        transition: .2s;
+        &:hover {
+          background: url(../assets/svg/arrow.svg) no-repeat right center;
+          transition: .2s;
+        }
+      }
+    }
+  }
+}
+
+//Main end

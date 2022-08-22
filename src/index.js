@@ -1,0 +1,6 @@
+import './styles/index'
+import './assets/svg/odigo-Logo.png'
+import './assets/svg/church-ico.svg'
+import './assets/svg/person-ico.svg'
+import './assets/svg/shop-ico.svg'
+import './assets/svg/arrow.svg'
